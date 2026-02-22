@@ -1,0 +1,308 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  22/Feb/2026  23:28:32
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Exe\Example.out
+#    Map file     =  
+#        C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\List\Example.map
+#    Command line =  
+#        -f C:\Users\nouriP\AppData\Local\Temp\EW6495.tmp
+#        (C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Obj\Intrrupt.o
+#        C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Obj\main.o
+#        C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Obj\startup_fm33fh0xx.o
+#        C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Obj\system_fm33lr0xx.o
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
+#        --no_out_extension -o
+#        C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Exe\Example.out
+#        --map
+#        C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\List\Example.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.1\arm\config\linker\FMSH\FM33LR02x.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x1'ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 0M, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'3fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xc0
+  .intvec            ro code          0x0   0xc0  startup_fm33fh0xx.o [1]
+                                   - 0xc0   0xc0
+
+"P1":                                      0xb2c
+  .text              ro code         0xc0  0x86c  main.o [1]
+  .text              ro code        0x92c   0xae  I32DivModFast.o [3]
+  .text              ro code        0x9da    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0x9dc    0x2  IntDivZer.o [3]
+  .text              ro code        0x9de    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0x9e0   0x90  Intrrupt.o [1]
+  .text              ro code        0xa70   0x3c  zero_init3.o [3]
+  .text              ro code        0xaac   0x30  copy_init3.o [3]
+  .text              ro code        0xadc   0x28  data_init.o [3]
+  .iar.init_table    const          0xb04   0x24  - Linker created -
+  .text              ro code        0xb28   0x1e  cmain.o [3]
+  .text              ro code        0xb46    0x4  low_level_init.o [2]
+  .text              ro code        0xb4a    0x8  exit.o [2]
+  .text              ro code        0xb52    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xb54    0xa  cexit.o [3]
+  .text              ro code        0xb5e    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xb60   0x14  exit.o [4]
+  Initializer bytes  const          0xb74   0x1c  <for P2-1>
+  .text              ro code        0xb90   0x10  startup_fm33fh0xx.o [1]
+  .text              ro code        0xba0    0xc  cstartup_M.o [3]
+  .text              ro code        0xbac    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbae    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbb0    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbb2    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbb4    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbb6    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbb8    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbba    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbbc    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbbe    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbc0    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbc2    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbc4    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbc6    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbc8    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbca    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbcc    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbce    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbd0    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbd2    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbd4    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbd6    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbd8    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbda    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbdc    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbde    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbe0    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbe2    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbe4    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbe6    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbe8    0x2  startup_fm33fh0xx.o [1]
+  .text              ro code        0xbea    0x2  system_fm33lr0xx.o [1]
+  .rodata            const          0xbec    0x0  zero_init3.o [3]
+  .rodata            const          0xbec    0x0  copy_init3.o [3]
+                                  - 0xbec  0xb2c
+
+"P2", part 1 of 3:                          0x1c
+  P2-1                        0x2000'0000   0x1c  <Init block>
+    .data            inited   0x2000'0000    0xc  Intrrupt.o [1]
+    .data            inited   0x2000'000c   0x10  Intrrupt.o [1]
+                            - 0x2000'001c   0x1c
+
+"P2", part 2 of 3:                         0x254
+  .bss               zero     0x2000'001c  0x100  main.o [1]
+  .bss               zero     0x2000'011c   0x64  Intrrupt.o [1]
+  .bss               zero     0x2000'0180   0x64  main.o [1]
+  .bss               zero     0x2000'01e4   0x64  main.o [1]
+  .bss               zero     0x2000'0248   0x10  main.o [1]
+  .bss               zero     0x2000'0258    0x4  main.o [1]
+  .bss               zero     0x2000'025c    0x4  main.o [1]
+  .bss               zero     0x2000'0260    0x2  main.o [1]
+  .bss               zero     0x2000'0262    0x2  main.o [1]
+  .bss               zero     0x2000'0264    0x2  main.o [1]
+  .bss               zero     0x2000'0266    0x2  main.o [1]
+  .bss               zero     0x2000'0268    0x2  main.o [1]
+  .bss               zero     0x2000'026a    0x2  main.o [1]
+  .bss               zero     0x2000'026c    0x1  main.o [1]
+  .bss               zero     0x2000'026d    0x1  main.o [1]
+  .bss               zero     0x2000'026e    0x1  main.o [1]
+                            - 0x2000'026f  0x253
+
+"P2", part 3 of 3:                         0x800
+  CSTACK                      0x2000'0270  0x800  <Block>
+    CSTACK           uninit   0x2000'0270  0x800  <Block tail>
+                            - 0x2000'0a70  0x800
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0xbec     0x1'ffff  0x1'f414
+  0x2000'0a70  0x2000'3fff    0x3590
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x253:
+          0x2000'001c  0x253
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x1c:
+                0xb74   0x1c
+    1 destination range, total size 0x1c:
+          0x2000'0000   0x1c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Obj: [1]
+    Intrrupt.o               144       28      128
+    main.o                 2 156               495
+    startup_fm33fh0xx.o      278
+    system_fm33lr0xx.o         2
+    ----------------------------------------------
+    Total:                 2 580       28      623
+
+dl6M_tlf.a: [2]
+    exit.o                     8
+    low_level_init.o           4
+    ----------------------------------------------
+    Total:                    12
+
+rt6M_tl.a: [3]
+    I32DivModFast.o          174
+    IntDivZer.o                2
+    cexit.o                   10
+    cmain.o                   30
+    copy_init3.o              48
+    cstartup_M.o              12
+    data_init.o               40
+    zero_init3.o              60
+    ----------------------------------------------
+    Total:                   376
+
+shb_l.a: [4]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Linker created                     36    2 048
+--------------------------------------------------
+    Grand Total:           2 988       64    2 671
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0xb04          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xb28          --   Gb  - Linker created -
+?main                         0xb29         Code  Gb  cmain.o [3]
+AD_GetResult                  0x3d9   0x3c  Code  Gb  main.o [1]
+AD_Init                       0x341   0x7a  Code  Gb  main.o [1]
+CRC8_07_FF                    0x561   0x48  Code  Lc  main.o [1]
+CSTACK$$Base            0x2000'0270          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0a70          --   Gb  - Linker created -
+Hardware_Init                 0x17b  0x18a  Code  Gb  main.o [1]
+IO__Init_                     0x505   0x20  Code  Gb  main.o [1]
+IWDT_Init                     0x305   0x28  Code  Gb  main.o [1]
+Init__UART1_                  0x45d   0x9c  Code  Gb  main.o [1]
+MUX0_IRQHandler               0xa43   0x16  Code  Gb  Intrrupt.o [1]
+MUX4_IRQHandler               0x9e1   0x62  Code  Gb  Intrrupt.o [1]
+NVIC_DisableIRQ                0xd9   0x18  Code  Lc  main.o [1]
+NVIC_EnableIRQ                 0xc1   0x18  Code  Lc  main.o [1]
+NVIC_SetPriority               0xf1   0x8a  Code  Lc  main.o [1]
+Proto_PollOnce                0x8b1   0x10  Code  Gb  main.o [1]
+Proto_Send                    0x76d   0x88  Code  Lc  main.o [1]
+Proto_TryParseAndReply_ID2
+                              0x801   0xa6  Code  Lc  main.o [1]
+RX_BUFFER               0x2000'011c   0x64  Data  Gb  Intrrupt.o [1]
+RX_BUFFER               0x2000'01e4   0x64  Data  Lc  main.o [1]
+RX_MON_PUT                    0x52d   0x24  Code  Lc  main.o [1]
+Region$$Table$$Base           0xb04          --   Gb  - Linker created -
+Region$$Table$$Limit          0xb28          --   Gb  - Linker created -
+SystemInit                    0xbeb    0x2  Code  Gb  system_fm33lr0xx.o [1]
+TX_BUFFER               0x2000'0000    0xc  Data  Gb  Intrrupt.o [1]
+TX_FRAME                0x2000'0248   0x10  Data  Lc  main.o [1]
+UART1_PollRx                  0x611   0xe6  Code  Gb  main.o [1]
+UART1_PollTx                  0x705   0x54  Code  Lc  main.o [1]
+UART1_RX                      0x5cd   0x14  Code  Lc  main.o [1]
+UART1_TX                      0x5b1   0x14  Code  Lc  main.o [1]
+UARTxOp                 0x2000'000c   0x10  Data  Gb  Intrrupt.o [1]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x2000'3fff         Data  Gb  <internal module>
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x2000'0000         Data  Gb  <internal module>
+__aeabi_idiv0                 0x9dd         Code  Gb  IntDivZer.o [3]
+__aeabi_uidiv                 0x92d         Code  Gb  I32DivModFast.o [3]
+__aeabi_uidivmod              0x92d         Code  Gb  I32DivModFast.o [3]
+__cmain                       0xb29         Code  Gb  cmain.o [3]
+__exit                        0xb61   0x14  Code  Gb  exit.o [4]
+__iar_copy_init3              0xaad   0x30  Code  Gb  copy_init3.o [3]
+__iar_data_init3              0xadd   0x28  Code  Gb  data_init.o [3]
+__iar_program_start           0xba1         Code  Gb  cstartup_M.o [3]
+__iar_zero_init3              0xa71   0x3c  Code  Gb  zero_init3.o [3]
+__low_level_init              0xb47    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  startup_fm33fh0xx.o [1]
+_call_main                    0xb35         Code  Gb  cmain.o [3]
+_exit                         0xb55         Code  Gb  cexit.o [3]
+_main                         0xb43         Code  Gb  cmain.o [3]
+exit                          0xb4b    0x8  Code  Gb  exit.o [2]
+expect_total            0x2000'026a    0x2  Data  Lc  main.o [1]
+frame_ready             0x2000'026e    0x1  Data  Lc  main.o [1]
+g_frame_cnt             0x2000'025c    0x4  Data  Gb  main.o [1]
+g_last_frame            0x2000'0180   0x64  Data  Gb  main.o [1]
+g_last_frame_len        0x2000'0262    0x2  Data  Gb  main.o [1]
+g_rx_mon_buf            0x2000'001c  0x100  Data  Gb  main.o [1]
+g_rx_mon_cnt            0x2000'0258    0x4  Data  Gb  main.o [1]
+g_rx_mon_wr             0x2000'0260    0x2  Data  Gb  main.o [1]
+in_frame                0x2000'026d    0x1  Data  Lc  main.o [1]
+main                          0x8c1   0x32  Code  Gb  main.o [1]
+rx_opc                  0x2000'0264    0x2  Data  Lc  main.o [1]
+tx_busy                 0x2000'026c    0x1  Data  Lc  main.o [1]
+tx_len                  0x2000'0266    0x2  Data  Lc  main.o [1]
+tx_opc                  0x2000'0268    0x2  Data  Lc  main.o [1]
+
+
+[1] = C:\Users\nouriP\Downloads\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\FM33LR0XX_IAR_¼Ä´æÆ÷°æ±¾\EWARM\Example\Obj
+[2] = dl6M_tlf.a
+[3] = rt6M_tl.a
+[4] = shb_l.a
+
+  2 988 bytes of readonly  code memory
+     64 bytes of readonly  data memory
+  2 671 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
