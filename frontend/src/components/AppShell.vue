@@ -10,6 +10,7 @@
       <aside class="card col-span-12 p-4 md:col-span-3 lg:col-span-2">
         <nav class="space-y-2 text-sm">
           <RouterLink class="block rounded-md px-3 py-2 hover:bg-slate-100" to="/assets">资产检索</RouterLink>
+          <RouterLink class="block rounded-md px-3 py-2 hover:bg-slate-100" to="/lab/portfolio">组合实验室</RouterLink>
         </nav>
       </aside>
       <main class="col-span-12 md:col-span-9 lg:col-span-10">
