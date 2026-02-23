@@ -1,12 +1,7 @@
-import { createApp, defineComponent } from 'vue'
+import { createApp } from 'vue'
 
-const App = defineComponent({
-  template: `
-    <main style="font-family: sans-serif; margin: 2rem;">
-      <h1>LR Project1 Frontend</h1>
-      <p>Vue 3 + Vite + TypeScript is ready.</p>
-    </main>
-  `,
-})
+import App from './App.vue'
+import router from './router'
+import './style.css'
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount('#app')
