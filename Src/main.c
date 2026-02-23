@@ -441,14 +441,13 @@ static void Proto_TryParseAndReply_ID2(void)
         return;
     }
     
+    /* CRC check: compare CRC from frame tail with locally calculated CRC. */
+    uint16_t crc_rx  = RX_BUFFER[total - 1] | (RX_BUFFER[total - 2] << 8);
+    uint16_t crc_cal = Protocol_CalculateCRC16((const uint8_t*)&RX_BUFFER[1], (uint16_t)(2u + len));
+    if(crc_rx != crc_cal)
     {
-        uint16_t crc_rx  = RX_BUFFER[total - 1]|(RX_BUFFER[total - 2]<<8);
-        uint16_t crc_cal = Protocol_CalculateCRC16((const uint8_t*)&RX_BUFFER[1], (uint16_t)(2u + len)); 
-        if(crc_rx != crc_cal)
-        {
-            rx_opc = 0;
-            return;
-        }
+        rx_opc = 0;
+        return;
     }
 
     if(id == DEV_ID_FILTER_DETECT && len >= 1)
@@ -489,5 +488,4 @@ int main(void)
         Proto_PollOnce();
     }
 }
-
 
