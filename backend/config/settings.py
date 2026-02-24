@@ -19,6 +19,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.health',
     'apps.assets',
+    'apps.marketdata',
+    'apps.quant',
 ]
 
 MIDDLEWARE = [
